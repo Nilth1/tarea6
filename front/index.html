@@ -1,195 +1,294 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta Pinta - Cafetería</title>
-    <link rel="stylesheet" href="dist/css/style.css">
-    <link rel="icon" href="img/index/icon.ico" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-    <div class="hero">
-        <img class="hero-img" src="https://img.magnific.com/vector-premium/menu-portada-cafeteria-paisaje-urbano-nocturno_600765-3800.jpg" alt="Fondo Cafetería">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DentalClick - Sistema de Gestión Dental</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (Para que se vea más profesional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+      body { background-color: #f8f9fa; }
+      .navbar-brand { font-weight: 700; color: #0d6efd; }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR PRINCIPAL -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand text-info" href="#"><i class="bi bi-heart-pulse-fill me-2"></i>DentalClick</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-shadow navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Selector de Perfil simulado con Nav-Tabs -->
+          <ul class="nav navbar-nav ms-auto nav-pills" id="profileTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active me-2" id="paciente-tab" data-bs-toggle="tab" data-bs-target="#paciente-pane" type="button" role="tab" aria-controls="paciente-pane" aria-selected="true">
+                <i class="bi bi-person-fill me-1"></i>Vista Paciente
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link bg-gradient" id="admin-tab" data-bs-toggle="tab" data-bs-target="#admin-pane" type="button" role="tab" aria-controls="admin-pane" aria-selected="false">
+                <i class="bi bi-shield-lock-fill me-1"></i>Vista Administrador
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL VISTAS -->
+    <div class="container my-4">
+      <div class="tab-content" id="profileTabContent">
         
-        <div class="hero-caja">
-            <div class="hero-caja2">
-                <div class="hero-texts">
-                    <h1>Alta Pinta</h1>
-                    <h2>Cafeteria</h2>
-                    <a href="dist/paginas/catalogo.html" class="catalogo-boton">Catalogo</a>
+        <!-- ================= VISTA PACIENTE ================= -->
+        <div class="tab-pane fade show active" id="paciente-pane" role="tabpanel" aria-labelledby="paciente-tab" tabindex="0">
+          <div class="row g-4">
+            
+            <!-- Bienvenida -->
+            <div class="col-12">
+              <div class="p-4 bg-white rounded-3 shadow-sm border-start border-primary border-4">
+                <h2>¡Hola, Carlos Gómez!</h2>
+                <p class="text-muted mb-0">Bienvenido a tu portal dental. Aquí puedes ver tus próximas citas y agendar una nueva.</p>
+              </div>
+            </div>
+
+            <!-- Formulario Agendar Cita -->
+            <div class="col-12 col-lg-5">
+              <div class="card h-100 shadow-sm">
+                <div class="card-header bg-primary text-white py-3">
+                  <h5 class="card-title mb-0"><i class="bi bi-calendar-plus me-2"></i>Agendar Nueva Cita</h5>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="header">
-        <div class="menu">
-            <div class="logo">
-                <img src="img/index/logo2.png" alt="Logo Alta Pinta">
-            </div>
-            <div class="menu-links">
-                <a href="index.html">Home</a>
-                <a href="dist/paginas/catalogo.html">Catalogo</a>
-                <a href="#">Recetas</a>
-                <a href="#">Acerca de nosotros</a>
-            </div>
-        </div>
-    </div>
-</header>
-<main>
-    <div class="historia">
-    <div class="historia-texto">
-        <div class="historia-titulos">
-            <h3 class="letra-linda">Conocé</h3>
-            <h2>NUESTRA HISTORIA</h2>
-        </div>
-        <div class="historia-aura">
-            <p>
-                Todo empezó en Uruguay por el 2021, cuando el grupo "Sub21" decidió tirar una idea sobre la mesa. 
-                Lo que arrancó como un proyecto entre amigos para divertirse y pasar el rato, terminó transformándose 
-                en algo inesperado. Aunque algunos quedaron por el camino, Isaias Blanco y Mathias Aizpun se mantuvieron 
-                al pie del cañón, impulsados por la pasión y las ganas de crear algo auténtico.
-            </p>
-            <p>
-                Con los años, Alta Pinta se volvió un referente por su café de excelencia y una atención "muy piola". 
-                A pesar de las ofertas para internacionalizarnos, elegimos mantener la exclusividad de nuestra casa, 
-                porque para nosotros, el motor siempre fue la amistad y el arte del buen café, nunca la plata.
-            </p>
-        </div>
-        <div class="historia-link">
-            <a href="#">ACERCA DE NOSOTROS</a>
-        </div>
-    </div>
-
-    <div class="historia-imagenes">
-        <div class="img-contenedor">
-            <img src="img/index/2img-part1.png" alt="Imagen Historia 1">
-        </div>
-        <div class="img-contenedor">
-            <img src="img/index/2img-part2.png" alt="Imagen Historia 2">
-        </div>
-    </div>
-    </div>
-    <div class="imgtres">
-          <div class="img-prueba">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJoFtoo3-mJJKGeDnzS6cFr2Ixs9AGJNz9nw&s" alt="1 de 3">
-            <img src="https://media.timeout.com/images/106184254/750/422/image.jpg" alt="2 de 3">
-            <img src="img/index/cafefoto3.avif" alt="3 de 3">
-            </div>
-
-
-            <div class="textos3-caja">
-                <div class="textostres">
-                    <h1>Alta Pinta</h1>
-                    <p>En Alta Pinta, cada taza de café es una obra maestra, cuidadosamente elaborada para ofrecerte una experiencia única.
-           </div>
-       </div>
-    </div>   
-    <div class="menu-seccion">
-        <div class="menu-imagenes-grilla">
-            <div class="menu-foto">
-                <img src="img/index/menu1.jfif" alt="Menu 1">
-            </div>
-            <div class="menu-foto">
-                <img src="img/index/menu2.jfif" alt="Menu 2">
-            </div>
-            <div class="menu-foto">
-                <img src="img/index/menu3.jfif" alt="Menu 3">
-            </div>
-            <div class="menu-foto">
-                <img src="img/index/menu4.jfif" alt="Menu 4">
-            </div>
-        </div>
-
-        <div class="menu-texto-lateral">
-            <div class="menu-titulos">
-                <h3 class="letra-linda">Descubre</h3>
-                <h2>MENU</h2>
-            </div>
-            <div class="menu-descripcion">
-                <p>
-                    Explorá nuestra variedad de opciones pensadas para cada momento del día. Desde clásicos imbatibles hasta ingeniosos inventos de autor donde el café es el protagonista absoluto, encontrando el balance perfecto con delicias dulces y saladas que potencian cada sorbo.
-                </p>
-            </div>
-            <div class="menu-link-ver">
-                <a href="#">MIRA EL MENU</a>
-            </div>
-        </div>
-    </div>
-    <div class="main-hero">
-        <img class="main-hero-img" src="img/index/main-hero.png" alt="Las Mezclas Perfectas">
-        
-        <div class="main-hero-caja">
-            <div class="main-hero-caja2">
-                <div class="main-hero-texts">
-                    <h2>LAS MEZCLAS</h2>
-                    <h1 class="letra-linda">Perfectas</h1>
+                <div class="card-body">
+                  <form action="#" method="GET" onsubmit="alert('Simulación: Cita solicitada con éxito'); return false;">
+                    <div class="mb-3">
+                      <label for="especialidad" class="form-label">Especialidad</label>
+                      <select class="form-select" id="especialidad" required>
+                        <option value="" selected disabled>Selecciona una opción</option>
+                        <option value="1">Odontología General</option>
+                        <option value="2">Ortodoncia (Brackets)</option>
+                        <option value="3">Endodoncia</option>
+                        <option value="4">Estética Dental</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="fecha" class="form-label">Fecha</label>
+                      <input type="date" class="form-select" id="fecha" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="hora" class="form-label">Horario Disponible</label>
+                      <select class="form-select" id="hora" required>
+                        <option value="" selected disabled>Selecciona la hora</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="11:30">11:30 AM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="17:30">05:30 PM</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2">Solicitar Turno</button>
+                  </form>
                 </div>
+              </div>
             </div>
+
+            <!-- Historial y Próximas Citas -->
+            <div class="col-12 col-lg-7">
+              <div class="card h-100 shadow-sm">
+                <div class="card-header bg-dark text-white py-3">
+                  <h5 class="card-title mb-0"><i class="bi bi-clock-history me-2"></i>Mis Citas</h5>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Fecha / Hora</th>
+                          <th>Especialista</th>
+                          <th>Tratamiento</th>
+                          <th>Estado</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>24 May 2026</strong><br><small class="text-muted">10:00 AM</small></td>
+                          <td>Dr. Luis Martínez</td>
+                          <td>Limpieza Profunda</td>
+                          <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                          <td><strong>10 Abr 2026</strong><br><small class="text-muted">16:00 PM</small></td>
+                          <td>Dra. Ana Ríos</td>
+                          <td>Ortodoncia Control</td>
+                          <td><span class="badge bg-success">Completada</span></td>
+                        </tr>
+                        <tr>
+                          <td><strong>15 Mar 2026</strong><br><small class="text-muted">11:30 AM</small></td>
+                          <td>Dr. Luis Martínez</td>
+                          <td>Diagnóstico General</td>
+                          <td><span class="badge bg-success">Completada</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
+
+        <!-- ================= VISTA ADMINISTRADOR ================= -->
+        <div class="tab-pane fade" id="admin-pane" role="tabpanel" aria-labelledby="admin-tab" tabindex="0">
+          
+          <!-- Tarjetas de Métricas Rápidas -->
+          <div class="row g-3 mb-4">
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="card border-0 shadow-sm bg-primary text-white">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                  <div>
+                    <h6 class="text-white-50 text-uppercase small">Citas Hoy</h6>
+                    <h3 class="mb-0">14</h3>
+                  </div>
+                  <i class="bi bi-calendar2-check-fill fs-1 text-white-50"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="card border-0 shadow-sm bg-success text-white">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                  <div>
+                    <h6 class="text-white-50 text-uppercase small">Nuevos Pacientes</h6>
+                    <h3 class="mb-0">6</h3>
+                  </div>
+                  <i class="bi bi-people-fill fs-1 text-white-50"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="card border-0 shadow-sm bg-warning text-dark">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                  <div>
+                    <h6 class="text-dark-50 text-uppercase small">Tratamientos Activos</h6>
+                    <h3 class="mb-0">32</h3>
+                  </div>
+                  <i class="bi bi-activity fs-1 text-dark-50"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+              <div class="card border-0 shadow-sm bg-info text-white">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                  <div>
+                    <h6 class="text-white-50 text-uppercase small">Ingresos Mes</h6>
+                    <h3 class="mb-0">$4,250</h3>
+                  </div>
+                  <i class="bi bi-currency-dollar fs-1 text-white-50"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel de Control del Admin -->
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-3">
+                  <h5 class="card-title mb-0"><i class="bi bi-sliders me-2"></i>Gestión General de Citas de la Clínica</h5>
+                  <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#crearPacienteModal">
+                    <i class="bi bi-person-plus-fill me-1"></i>Registrar Paciente
+                  </button>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Paciente</th>
+                          <th>Contacto</th>
+                          <th>Especialista asignado</th>
+                          <th>Horario asignado</th>
+                          <th class="text-center">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>Carlos Gómez</strong></td>
+                          <td>carlos@email.com<br><small class="text-muted">+34 600 111 222</small></td>
+                          <td>Dr. Luis Martínez</td>
+                          <td>24 May - 10:00 AM</td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-success me-1" onclick="alert('Cita Confirmada')"><i class="bi bi-check-lg"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="alert('Cita Cancelada')"><i class="bi bi-trash3"></i></button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>María Rodríguez</strong></td>
+                          <td>maria.r@email.com<br><small class="text-muted">+34 600 333 444</small></td>
+                          <td>Dra. Ana Ríos</td>
+                          <td>20 May - 12:30 PM</td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-success me-1" onclick="alert('Cita Confirmada')"><i class="bi bi-check-lg"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="alert('Cita Cancelada')"><i class="bi bi-trash3"></i></button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>Juan Pérez</strong></td>
+                          <td>juan.p@email.com<br><small class="text-muted">+34 600 555 666</small></td>
+                          <td>Dr. Luis Martínez</td>
+                          <td>21 May - 16:00 PM</td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-success me-1" onclick="alert('Cita Confirmada')"><i class="bi bi-check-lg"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="alert('Cita Cancelada')"><i class="bi bi-trash3"></i></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-    <div class="reserva-seccion">
-        <div class="reserva-texto">
-            <div class="reserva-titulos">
-                <h3 class="letra-linda">Delicias</h3>
-                <h2>CULINARIAS</h2>
-            </div>
-            <div class="reserva-aura">
-                <p>
-                    Te proponemos una experiencia gastronómica única y relajada, donde cada plato está pensado para sorprender. Fusionamos ingredientes seleccionados con técnicas artesanales para crear sabores exquisitos que combinan a la perfección con nuestra cafetería de especialidad.
-                </p>
-            </div>
-            <div class="reserva-link">
-                <a href="#">RESERVAR</a>
-            </div>
-        </div>
 
-        <div class="reserva-imagenes">
-            <div class="img-contenedor">
-                <img src="img/index/img-reserva1.avif" alt="Delicia Culinaria 1">
-            </div>
-            <div class="img-contenedor">
-                <img src="img/index/img-reserva2.jfif" alt="Delicia Culinaria 2">
-            </div>
+    <!-- MODAL DE COMPONENTE EXTRA (REGISTRAR PACIENTE NUEVO) -->
+    <div class="modal fade" id="crearPacienteModal" tabindex="-1" aria-labelledby="crearPacienteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-info text-dark">
+            <h5 class="modal-title" id="crearPacienteModalLabel"><i class="bi bi-person-plus-fill me-2"></i>Ficha de Nuevo Paciente</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form onsubmit="alert('Simulación: Paciente guardado en base de datos ficticia'); return false;">
+              <div class="mb-3">
+                <label for="nombreModal" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="nombreModal" placeholder="Ej: Lucía Fernández" required>
+              </div>
+              <div class="mb-3">
+                <label for="telefonoModal" class="form-label">Teléfono de contacto</label>
+                <input type="tel" class="form-control" id="telefonoModal" placeholder="Ej: +34 600 000 000" required>
+              </div>
+              <div class="mb-3">
+                <label for="historialModal" class="form-label">Notas Clínicas Iniciales</label>
+                <textarea class="form-control" id="historialModal" rows="3" placeholder="Alergias, tratamientos previos..."></textarea>
+              </div>
+              <div class="text-end">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar Paciente</button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="acerca-nosotros">
-        <div class="acerca-contenido">
-            <h2>ACERCA DE NOSOTROS</h2>
-            <div class="estrellita">★</div>
-            <p class="acerca-descripcion">
-                Alta Pinta nació como un sueño entre amigos en el 2021 y hoy encuentra su lugar en Colinas de Solymar, Uruguay. Nos apasiona ofrecer un rincón donde la tranquilidad de la zona se fusiona con cafés de especialidad de excelencia y una atención muy piola, manteniendo siempre intacta nuestra esencia original.
-            </p>
-        </div>
 
-        <div class="newsletter-contenido">
-            <h2>RECIBIR NOTICIAS SOBRE NOSOTROS A TRAVÉS DE MAIL</h2>
-            <div class="input-contenedor">
-                <input type="email" placeholder="Tu correo electrónico...">
-            </div>
-        </div>
-    </div>                     
-</main>
-<footer class="footer-principal">
-        <div class="footer-fila-uno">
-            <p>© Alta Pinta</p>
-            <span class="separador">•</span>
-            <p>Colinas de Solymar, Uruguay</p>
-            <span class="separador">•</span>
-            <p>094 123 123</p>
-            <span class="separador">•</span>
-            <p>Hecho con amor por Sub21</p>
-        </div>
-
-        <div class="footer-fila-dos">
-            <a href="#">Permisos y Copyright</a>
-            <span class="separador">•</span>
-            <a href="#">Contactanos</a>
-        </div>
-    </footer>
-</body>
+    <!-- Bootstrap 5 JavaScript Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
