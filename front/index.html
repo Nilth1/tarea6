@@ -3,292 +3,333 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DentalClick - Sistema de Gestión Dental</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Sistema de Gestión - Clínica Dental</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons (Para que se vea más profesional) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
-      body { background-color: #f8f9fa; }
-      .navbar-brand { font-weight: 700; color: #0d6efd; }
+      body {
+        background-color: #f8f9fa;
+      }
+      .navbar {
+        margin-bottom: 2rem;
+      }
     </style>
   </head>
   <body>
 
-    <!-- NAVBAR PRINCIPAL -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <!-- MENÚ DE NAVEGACIÓN SUPERIOR (NAVBAR) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand text-info" href="#"><i class="bi bi-heart-pulse-fill me-2"></i>DentalClick</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-shadow navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="#">Clínica Dental</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <!-- Selector de Perfil simulado con Nav-Tabs -->
-          <ul class="nav navbar-nav ms-auto nav-pills" id="profileTab" role="tablist">
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="tabsMenu" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active me-2" id="paciente-tab" data-bs-toggle="tab" data-bs-target="#paciente-pane" type="button" role="tab" aria-controls="paciente-pane" aria-selected="true">
-                <i class="bi bi-person-fill me-1"></i>Vista Paciente
-              </button>
+              <button class="nav-link active" id="inicio-tab" data-bs-toggle="tab" data-bs-target="#inicio-pane" type="button" role="tab" aria-controls="inicio-pane" aria-selected="true">🏠 Inicio</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link bg-gradient" id="admin-tab" data-bs-toggle="tab" data-bs-target="#admin-pane" type="button" role="tab" aria-controls="admin-pane" aria-selected="false">
-                <i class="bi bi-shield-lock-fill me-1"></i>Vista Administrador
-              </button>
+              <button class="nav-link" id="mis-agendas-tab" data-bs-toggle="tab" data-bs-target="#mis-agendas-pane" type="button" role="tab" aria-controls="mis-agendas-pane" aria-selected="false">👤 Mis Agendas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="agendar-cita-tab" data-bs-toggle="tab" data-bs-target="#agendar-cita-pane" type="button" role="tab" aria-controls="agendar-cita-pane" aria-selected="false">👤 Agendar Cita</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="panel-control-tab" data-bs-toggle="tab" data-bs-target="#panel-control-pane" type="button" role="tab" aria-controls="panel-control-pane" aria-selected="false">🔑 Panel Control</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="alta-profesionales-tab" data-bs-toggle="tab" data-bs-target="#alta-profesionales-pane" type="button" role="tab" aria-controls="alta-profesionales-pane" aria-selected="false">🔑 Alta Profesionales</button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- CONTENEDOR PRINCIPAL VISTAS -->
-    <div class="container my-4">
-      <div class="tab-content" id="profileTabContent">
-        
-        <!-- ================= VISTA PACIENTE ================= -->
-        <div class="tab-pane fade show active" id="paciente-pane" role="tabpanel" aria-labelledby="paciente-tab" tabindex="0">
-          <div class="row g-4">
-            
-            <!-- Bienvenida -->
+    <!-- CONTENEDOR PRINCIPAL DE LAS VISTAS -->
+    <div class="container">
+      <div class="tab-content" id="contenidoTabs">
+
+        <!-- 🏠 VISTA 1: INICIO (PÁGINA PRINCIPAL) -->
+        <div class="tab-pane fade show active" id="inicio-pane" role="tabpanel" aria-labelledby="inicio-tab" tabindex="0">
+          <div class="row mb-4">
             <div class="col-12">
-              <div class="p-4 bg-white rounded-3 shadow-sm border-start border-primary border-4">
-                <h2>¡Hola, Carlos Gómez!</h2>
-                <p class="text-muted mb-0">Bienvenido a tu portal dental. Aquí puedes ver tus próximas citas y agendar una nueva.</p>
+              <div class="bg-white p-5 rounded-3 shadow-sm">
+                <h1 class="display-5 fw-bold">Bienvenido a la Clínica Dental</h1>
+                <p class="col-md-8 fs-4 text-muted">Tu salud bucal es nuestra prioridad. Desde este panel puedes gestionar tus citas médicas o administrar los horarios del centro.</p>
+                <div class="mt-4">
+                  <p class="fw-bold text-secondary">Accesos Rápidos de Simulación:</p>
+                  <button class="btn btn-primary me-2 mb-2" onclick="document.getElementById('mis-agendas-tab').click()">Ir a Vista Paciente</button>
+                  <button class="btn btn-dark mb-2" onclick="document.getElementById('panel-control-tab').click()">Ir a Vista Administrador</button>
+                </div>
               </div>
             </div>
-
-            <!-- Formulario Agendar Cita -->
-            <div class="col-12 col-lg-5">
+          </div>
+          <div class="row g-4">
+            <div class="col-12 col-md-4">
               <div class="card h-100 shadow-sm">
-                <div class="card-header bg-primary text-white py-3">
-                  <h5 class="card-title mb-0"><i class="bi bi-calendar-plus me-2"></i>Agendar Nueva Cita</h5>
-                </div>
                 <div class="card-body">
-                  <form action="#" method="GET" onsubmit="alert('Simulación: Cita solicitada con éxito'); return false;">
-                    <div class="mb-3">
-                      <label for="especialidad" class="form-label">Especialidad</label>
-                      <select class="form-select" id="especialidad" required>
-                        <option value="" selected disabled>Selecciona una opción</option>
-                        <option value="1">Odontología General</option>
-                        <option value="2">Ortodoncia (Brackets)</option>
-                        <option value="3">Endodoncia</option>
-                        <option value="4">Estética Dental</option>
-                      </select>
-                    </div>
-                    <div class="mb-3">
-                      <label for="fecha" class="form-label">Fecha</label>
-                      <input type="date" class="form-select" id="fecha" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="hora" class="form-label">Horario Disponible</label>
-                      <select class="form-select" id="hora" required>
-                        <option value="" selected disabled>Selecciona la hora</option>
-                        <option value="09:00">09:00 AM</option>
-                        <option value="11:30">11:30 AM</option>
-                        <option value="15:00">03:00 PM</option>
-                        <option value="17:30">05:30 PM</option>
-                      </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100 py-2">Solicitar Turno</button>
-                  </form>
+                  <h5 class="card-title">Nueva Tecnología Láser</h5>
+                  <p class="card-text">Incorporamos equipamiento de última generación para realizar tratamientos de conducto e implantes de manera completamente indolora.</p>
                 </div>
               </div>
             </div>
-
-            <!-- Historial y Próximas Citas -->
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-md-4">
               <div class="card h-100 shadow-sm">
-                <div class="card-header bg-dark text-white py-3">
-                  <h5 class="card-title mb-0"><i class="bi bi-clock-history me-2"></i>Mis Citas</h5>
-                </div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0">
-                      <thead class="table-light">
-                        <tr>
-                          <th>Fecha / Hora</th>
-                          <th>Especialista</th>
-                          <th>Tratamiento</th>
-                          <th>Estado</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><strong>24 May 2026</strong><br><small class="text-muted">10:00 AM</small></td>
-                          <td>Dr. Luis Martínez</td>
-                          <td>Limpieza Profunda</td>
-                          <td><span class="badge bg-warning text-dark">Pendiente</span></td>
-                        </tr>
-                        <tr>
-                          <td><strong>10 Abr 2026</strong><br><small class="text-muted">16:00 PM</small></td>
-                          <td>Dra. Ana Ríos</td>
-                          <td>Ortodoncia Control</td>
-                          <td><span class="badge bg-success">Completada</span></td>
-                        </tr>
-                        <tr>
-                          <td><strong>15 Mar 2026</strong><br><small class="text-muted">11:30 AM</small></td>
-                          <td>Dr. Luis Martínez</td>
-                          <td>Diagnóstico General</td>
-                          <td><span class="badge bg-success">Completada</span></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="card-body">
+                  <h5 class="card-title">Campaña de Prevención</h5>
+                  <p class="card-text">Durante todo este mes, las limpiezas dentales y los diagnósticos preventivos para menores de 12 años contarán con cobertura total.</p>
                 </div>
               </div>
             </div>
-
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">Horarios de Atención Extendidos</h5>
+                  <p class="card-text">Para adaptarnos mejor a tus tiempos, a partir del próximo lunes abriremos nuestras puertas desde las 07:00 hasta las 21:00 horas.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- ================= VISTA ADMINISTRADOR ================= -->
-        <div class="tab-pane fade" id="admin-pane" role="tabpanel" aria-labelledby="admin-tab" tabindex="0">
-          
-          <!-- Tarjetas de Métricas Rápidas -->
-          <div class="row g-3 mb-4">
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="card border-0 shadow-sm bg-primary text-white">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                  <div>
-                    <h6 class="text-white-50 text-uppercase small">Citas Hoy</h6>
-                    <h3 class="mb-0">14</h3>
-                  </div>
-                  <i class="bi bi-calendar2-check-fill fs-1 text-white-50"></i>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="card border-0 shadow-sm bg-success text-white">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                  <div>
-                    <h6 class="text-white-50 text-uppercase small">Nuevos Pacientes</h6>
-                    <h3 class="mb-0">6</h3>
-                  </div>
-                  <i class="bi bi-people-fill fs-1 text-white-50"></i>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="card border-0 shadow-sm bg-warning text-dark">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                  <div>
-                    <h6 class="text-dark-50 text-uppercase small">Tratamientos Activos</h6>
-                    <h3 class="mb-0">32</h3>
-                  </div>
-                  <i class="bi bi-activity fs-1 text-dark-50"></i>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="card border-0 shadow-sm bg-info text-white">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                  <div>
-                    <h6 class="text-white-50 text-uppercase small">Ingresos Mes</h6>
-                    <h3 class="mb-0">$4,250</h3>
-                  </div>
-                  <i class="bi bi-currency-dollar fs-1 text-white-50"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel de Control del Admin -->
-          <div class="row g-4">
+        <!-- 👤 VISTA 2: MIS AGENDAS (PACIENTE) -->
+        <div class="tab-pane fade" id="mis-agendas-pane" role="tabpanel" aria-labelledby="mis-agendas-tab" tabindex="0">
+          <div class="row mb-3">
             <div class="col-12">
-              <div class="card shadow-sm">
-                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-3">
-                  <h5 class="card-title mb-0"><i class="bi bi-sliders me-2"></i>Gestión General de Citas de la Clínica</h5>
-                  <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#crearPacienteModal">
-                    <i class="bi bi-person-plus-fill me-1"></i>Registrar Paciente
-                  </button>
-                </div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table table-striped table-hover align-middle mb-0">
-                      <thead class="table-light">
-                        <tr>
-                          <th>Paciente</th>
-                          <th>Contacto</th>
-                          <th>Especialista asignado</th>
-                          <th>Horario asignado</th>
-                          <th class="text-center">Acciones</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><strong>Carlos Gómez</strong></td>
-                          <td>carlos@email.com<br><small class="text-muted">+34 600 111 222</small></td>
-                          <td>Dr. Luis Martínez</td>
-                          <td>24 May - 10:00 AM</td>
-                          <td class="text-center">
-                            <button class="btn btn-sm btn-success me-1" onclick="alert('Cita Confirmada')"><i class="bi bi-check-lg"></i></button>
-                            <button class="btn btn-sm btn-danger" onclick="alert('Cita Cancelada')"><i class="bi bi-trash3"></i></button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>María Rodríguez</strong></td>
-                          <td>maria.r@email.com<br><small class="text-muted">+34 600 333 444</small></td>
-                          <td>Dra. Ana Ríos</td>
-                          <td>20 May - 12:30 PM</td>
-                          <td class="text-center">
-                            <button class="btn btn-sm btn-success me-1" onclick="alert('Cita Confirmada')"><i class="bi bi-check-lg"></i></button>
-                            <button class="btn btn-sm btn-danger" onclick="alert('Cita Cancelada')"><i class="bi bi-trash3"></i></button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>Juan Pérez</strong></td>
-                          <td>juan.p@email.com<br><small class="text-muted">+34 600 555 666</small></td>
-                          <td>Dr. Luis Martínez</td>
-                          <td>21 May - 16:00 PM</td>
-                          <td class="text-center">
-                            <button class="btn btn-sm btn-success me-1" onclick="alert('Cita Confirmada')"><i class="bi bi-check-lg"></i></button>
-                            <button class="btn btn-sm btn-danger" onclick="alert('Cita Cancelada')"><i class="bi bi-trash3"></i></button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+              <h2>Historial de Mis Citas</h2>
+              <p class="text-muted">Haz clic en cualquier fila para desplegar el modal con el detalle completo de la consulta.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table table-hover bg-white border align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Hora</th>
+                      <th>Tratamiento</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#detalleCitaModal">
+                      <td>28/05/2026</td>
+                      <td>10:30 AM</td>
+                      <td>Ortodoncia Control</td>
+                      <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                    </tr>
+                    <tr style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#detalleCitaModal">
+                      <td>14/04/2026</td>
+                      <td>16:00 PM</td>
+                      <td>Limpieza Bucal</td>
+                      <td><span class="badge bg-success">Completada</span></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-
         </div>
+
+        <!-- 👤 VISTA 3: AGENDAR CITA (PACIENTE) -->
+        <div class="tab-pane fade" id="agendar-cita-pane" role="tabpanel" aria-labelledby="agendar-cita-tab" tabindex="0">
+          <div class="row mb-3">
+            <div class="col-12">
+              <h2>Solicitar Nueva Consulta</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-8 col-lg-6">
+              <div class="bg-white p-4 rounded-3 border shadow-sm">
+                <form onsubmit="return false;">
+                  <div class="mb-3">
+                    <label for="selectEspecialidad" class="form-label">Seleccione la Especialidad</label>
+                    <select class="form-select" id="selectEspecialidad" required>
+                      <option value="" selected disabled>Seleccione una opción</option>
+                      <option value="1">Odontología General</option>
+                      <option value="2">Ortodoncia</option>
+                      <option value="3">Pediatría Dental</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputFecha" class="form-label">Fecha Solicitada</label>
+                    <input type="date" class="form-control" id="inputFecha" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="selectHora" class="form-label">Horario Disponible</label>
+                    <select class="form-select" id="selectHora" required>
+                      <option value="" selected disabled>Seleccione un horario</option>
+                      <option value="1">09:00 AM</option>
+                      <option value="2">11:30 AM</option>
+                      <option value="3">15:30 PM</option>
+                    </select>
+                  </div>
+                  <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exitoCitaModal">Confirmar Turno</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🔑 VISTA 4: PANEL DE CONTROL DE HORARIOS (ADMIN) -->
+        <div class="tab-pane fade" id="panel-control-pane" role="tabpanel" aria-labelledby="panel-control-tab" tabindex="0">
+          <div class="row mb-3">
+            <div class="col-12">
+              <h2>Panel de Control de Horarios</h2>
+              <p class="text-muted">Listado global de turnos agendados para el día de hoy. Utilice las acciones para modificar o borrar registros.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table table-striped bg-white border align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Paciente</th>
+                      <th>Odontólogo</th>
+                      <th>Horario</th>
+                      <th>Tratamiento</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Carlos Gómez</strong></td>
+                      <td>Dr. Luis Martínez</td>
+                      <td>09:00 AM</td>
+                      <td>Evaluación Inicial</td>
+                      <td>
+                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#adminAccionModal">Gestionar</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>María Rodríguez</strong></td>
+                      <td>Dra. Ana Ríos</td>
+                      <td>11:30 AM</td>
+                      <td>Ortodoncia Control</td>
+                      <td>
+                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#adminAccionModal">Gestionar</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🔑 VISTA 5: ALTA DE PROFESIONALES (ADMIN) -->
+        <div class="tab-pane fade" id="alta-profesionales-pane" role="tabpanel" aria-labelledby="alta-profesionales-tab" tabindex="0">
+          <div class="row mb-3">
+            <div class="col-12">
+              <h2>Registrar Nuevo Odontólogo</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-8 col-lg-6">
+              <div class="bg-white p-4 rounded-3 border shadow-sm">
+                <form onsubmit="alert('Profesional registrado de manera estática con éxito.'); return false;">
+                  <div class="mb-3">
+                    <label for="nombreDoc" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="nombreDoc" placeholder="Ej: Dr. Alejandro Peralta" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="especialidadDoc" class="form-label">Especialidad médica</label>
+                    <input type="text" class="form-control" id="especialidadDoc" placeholder="Ej: Endodoncia" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="matriculaDoc" class="form-label">Número de Matrícula Profesional</label>
+                    <input type="text" class="form-control" id="matriculaDoc" placeholder="Ej: MP-98542" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="horarioDoc" class="form-label">Rango Horario de Atención</label>
+                    <input type="text" class="form-control" id="horarioDoc" placeholder="Ej: Lunes a Viernes 08:00 a 14:00" required>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">Dar de Alta Profesional</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- MODAL DE COMPONENTE EXTRA (REGISTRAR PACIENTE NUEVO) -->
-    <div class="modal fade" id="crearPacienteModal" tabindex="-1" aria-labelledby="crearPacienteModalLabel" aria-hidden="true">
+    <!-- ================= ANATOMÍA DE MODALES OBLIGATORIOS ================= -->
+
+    <!-- Modal Detalle Cita (Vista Paciente -> Mis Agendas) -->
+    <div class="modal fade" id="detalleCitaModal" tabindex="-1" aria-labelledby="detalleCitaModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header bg-info text-dark">
-            <h5 class="modal-title" id="crearPacienteModalLabel"><i class="bi bi-person-plus-fill me-2"></i>Ficha de Nuevo Paciente</h5>
+          <div class="modal-header">
+            <h5 class="modal-title" id="detalleCitaModalLabel">Detalle Técnico de la Consulta</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form onsubmit="alert('Simulación: Paciente guardado en base de datos ficticia'); return false;">
-              <div class="mb-3">
-                <label for="nombreModal" class="form-label">Nombre Completo</label>
-                <input type="text" class="form-control" id="nombreModal" placeholder="Ej: Lucía Fernández" required>
-              </div>
-              <div class="mb-3">
-                <label for="telefonoModal" class="form-label">Teléfono de contacto</label>
-                <input type="tel" class="form-control" id="telefonoModal" placeholder="Ej: +34 600 000 000" required>
-              </div>
-              <div class="mb-3">
-                <label for="historialModal" class="form-label">Notas Clínicas Iniciales</label>
-                <textarea class="form-control" id="historialModal" rows="3" placeholder="Alergias, tratamientos previos..."></textarea>
-              </div>
-              <div class="text-end">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar Paciente</button>
-              </div>
-            </form>
+            <p><strong>Fecha:</strong> 28/05/2026</p>
+            <p><strong>Hora:</strong> 10:30 AM</p>
+            <p><strong>Odontólogo:</strong> Dr. Luis Martínez</p>
+            <p><strong>Tratamiento:</strong> Ortodoncia Control Integral</p>
+            <p><strong>Estado del Turno:</strong> <span class="badge bg-warning text-dark">Pendiente de confirmación</span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bootstrap 5 JavaScript Bundle con Popper -->
+    <!-- Modal Éxito Operación (Vista Paciente -> Agendar Cita) -->
+    <div class="modal fade" id="exitoCitaModal" tabindex="-1" aria-labelledby="exitoCitaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="exitoCitaModalLabel">Operación Exitosa</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center py-4">
+            <p class="fs-5 mb-0">Su solicitud de turno ha sido procesada de manera correcta en el sistema estático.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Acciones Administrador (Vista Admin -> Panel Control) -->
+    <div class="modal fade" id="adminAccionModal" tabindex="-1" aria-labelledby="adminAccionModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title" id="adminAccionModalLabel">Gestión de Agenda Seleccionada</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-muted">Seleccione una acción administrativa de simulación para este registro de turno diario.</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="alert('Simulación: Registro eliminado de la tabla.')">Borrar Turno</button>
+            <div>
+              <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#exitoCitaModal">Modificar Turno</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
+{ @media (max-width: 576px) {
+  .card-body h5 {
+    font-size: 1.25rem;
+  }
+  .card-body p {
+    font-size: 0.9rem;
+  }
+}
+}
