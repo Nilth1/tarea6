@@ -1,314 +1,138 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Costa Dental</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costa Dental - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/css/style.css">
     <style>
-      body {
-        background-color: #f8f9fa;
-      }
+        body {
+            background-color: #f4f6f9;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .navbar-custom {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+        .main-paragraph {
+            max-width: 700px;
+        }
+        .center-img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .card-custom {
+            background-color: #ffffff;
+            border: 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
-    <header class="border-bottom py-3 mb-4 bg-white shadow-sm"> 
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-6">
-            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none"> 
-              <span class="fs-4 fw-bold text-primary">Costa Dental</span> 
-            </a> 
-          </div>
-          <div class="col-6 text-end">
-            <ul class="nav nav-pills d-inline-flex" id="tabsMenu" role="tablist"> 
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="inicio-tab" data-bs-toggle="tab" data-bs-target="#inicio-pane" type="button" role="tab" aria-controls="inicio-pane" aria-selected="true"> Inicio</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="mis-agendas-tab" data-bs-toggle="tab" data-bs-target="#mis-agendas-pane" type="button" role="tab" aria-controls="mis-agendas-pane" aria-selected="false"> Mis Agendas</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="agendar-cita-tab" data-bs-toggle="tab" data-bs-target="#agendar-cita-pane" type="button" role="tab" aria-controls="agendar-cita-pane" aria-selected="false"> Agendar Cita</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="panel-control-tab" data-bs-toggle="tab" data-bs-target="#panel-control-pane" type="button" role="tab" aria-controls="panel-control-pane" aria-selected="false"> Panel Control</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="alta-profesionales-tab" data-bs-toggle="tab" data-bs-target="#alta-profesionales-pane" type="button" role="tab" aria-controls="alta-profesionales-pane" aria-selected="false">Nuevo Profesional</button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="container">
-      <div class="tab-content" id="contenidoTabs">
-
-        <div class="tab-pane fade show active" id="inicio-pane" role="tabpanel" aria-labelledby="inicio-tab" tabindex="0">
-          <div class="row mb-4">
-            <div class="col-12">
-              <div class="bg-white p-5 rounded-3 border shadow-sm">
-                <h1 class="display-5 fw-bold">Bienvenido a Costa Dental</h1>
-                <p class="col-md-8 fs-5 text-muted">Tu salud bucal es nuestra prioridad. Desde este panel interactivo puedes alternar entre los accesos simulados de Paciente y Administrador.</p>
-                <div class="mt-4">
-                  <p class="fw-bold text-secondary">Simulación de Roles:</p>
-                  <button class="btn btn-primary me-2 mb-2" onclick="document.getElementById('mis-agendas-tab').click()">Ver Vista de Usuario (Paciente)</button>
-                  <button class="btn btn-dark mb-2" onclick="document.getElementById('panel-control-tab').click()">Ver Vista de Administrador</button>
-                </div>
-              </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary fs-3" href="landing.html">Costa Dental</a>
+            <div class="d-flex gap-2">
+                <a href="landing.html" class="btn btn-outline-primary btn-sm px-3 rounded-pill">Inicio</a>
+                <button class="btn btn-primary btn-sm px-3 rounded-pill" data-bs-toggle="collapse" data-bs-target="#vista-paciente">Paciente</button>
+                <button class="btn btn-secondary btn-sm px-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-opciones-admin">Administrador</button>
             </div>
-          </div>
-          
-          <div class="row g-4">
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
             <div class="col-12 col-md-4">
-              <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Nueva Tecnología Láser</h5>
-                  <p class="card-text text-muted">Incorporamos equipamiento de última generación para realizar tratamientos de conducto de manera indolora.</p>
+                <div id="vista-paciente" class="collapse p-4 bg-white border rounded-4 shadow-sm text-center">
+                    <h4 class="mb-3 fw-bold text-dark">¡Hola, paciente_1!</h4>
+                    <div class="d-grid gap-2">
+                        <a href="dist/paginas/agendas.html" class="btn btn-info text-white fw-medium py-2">Futuras fechas</a>
+                        <a href="dist/paginas/agendar.html" class="btn btn-success fw-medium py-2">Agendar citas</a>
+                    </div>
                 </div>
-              </div>
             </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-opciones-admin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4 text-center">
+                <div class="modal-header border-bottom-0 pt-4 px-4 position-relative">
+                    <h5 class="modal-title fw-bold fs-4 w-100">¡Hola, Administrador!</h5>
+                    <button type="button" class="btn-close position-absolute end-0 me-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pb-5 mt-2">
+                    <div class="d-grid gap-3">
+                        <a href="dist/paginas/panel_control.html" class="btn btn-warning text-dark fw-medium py-2">Panel de Control de Horarios</a>
+                        <a href="dist/paginas/alta_profesionales.html" class="btn btn-danger fw-medium py-2">Alta de Profesionales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container py-5">
+        
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-dark mb-3">Tu sonrisa en las mejores manos</h1>
+            <p class="lead text-muted mx-auto main-paragraph">En Costa Dental nos preocupamos por tu salud bucal. Ofrecemos tecnología de vanguardia y profesionales capacitados para brindarte la mejor atención personalizada.</p>
+        </div>
+
+        <div class="row mb-5 justify-content-center">
+            <div class="col-12 text-center">
+                <img src="img/hero-bienvenida.jpeg" alt="Bienvenida Costa Dental" class="img-fluid center-img">
+            </div>
+        </div>
+
+        <hr class="my-5 opacity-25">
+
+        <div class="mb-5">
+            <h2 class="text-center fw-bold text-dark">Novedades de la Clínica</h2>
+        </div>
+
+        <div class="row g-4">
             <div class="col-12 col-md-4">
-              <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Campaña de Prevención</h5>
-                  <p class="card-text text-muted">Durante todo este mes, los diagnósticos preventivos y limpiezas para menores de 12 años cuentan con cobertura total.</p>
+                <div class="card h-100 card-custom p-3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary mb-3">Importancia del cepillado diario</h5>
+                        <p class="card-text text-muted lh-base">Mantener una higiene constante previene la formación de sarro y futuras caries. Te contamos las mejores técnicas de cepillado recomendadas por nuestros odontólogos.</p>
+                    </div>
                 </div>
-              </div>
             </div>
+
             <div class="col-12 col-md-4">
-              <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold">Horarios Extendidos</h5>
-                  <p class="card-text text-muted">Para adaptarnos mejor a tus tiempos, a partir del próximo lunes abriremos de 07:00 a 21:00 horas.</p>
+                <div class="card h-100 card-custom p-3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary mb-3">Nuevos tratamientos de ortodoncia</h5>
+                        <p class="card-text text-muted lh-base">Incorporamos tecnología de alineadores invisibles. Una forma estética, cómoda y moderna de alinear tus dientes sin necesidad de brackets tradicionales.</p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card h-100 card-custom p-3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-primary mb-3">Campañas de prevención infantil</h5>
+                        <p class="card-text text-muted lh-base">Este mes nos enfocamos en los más chicos. Traé a tus hijos para una revisión preventiva gratuita y aprendan juntos a cuidar sus dientes de forma divertida.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="tab-pane fade" id="mis-agendas-pane" role="tabpanel" aria-labelledby="mis-agendas-tab" tabindex="0">
-          <div class="row mb-3">
-            <div class="col-12">
-              <h2 class="fw-bold">Historial de Mis Citas</h2>
-              <p class="text-muted">Haz clic en cualquier fila para desplegar el Modal con el detalle de la consulta.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="table-responsive">
-                <table class="table table-hover bg-white border align-middle">
-                  <thead class="table-light">
-                    <tr>
-                      <th>Fecha</th>
-                      <th>Hora</th>
-                      <th>Tratamiento</th>
-                      <th>Estado</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#detalleCitaModal">
-                      <td>28/05/2026</td>
-                      <td>10:30 AM</td>
-                      <td>Ortodoncia Control</td>
-                      <td><span class="badge bg-warning text-dark">Pendiente</span></td>
-                    </tr>
-                    <tr style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#detalleCitaModal">
-                      <td>14/04/2026</td>
-                      <td>16:00 PM</td>
-                      <td>Limpieza Bucal</td>
-                      <td><span class="badge bg-success">Completada</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+    </main>
 
-        <div class="tab-pane fade" id="agendar-cita-pane" role="tabpanel" aria-labelledby="agendar-cita-tab" tabindex="0">
-          <div class="row mb-3">
-            <div class="col-12">
-              <h2 class="fw-bold">Solicitar Nueva Consulta</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-8 col-lg-6">
-              <div class="bg-white p-4 rounded-3 border shadow-sm">
-                <form onsubmit="return false;">
-                  <div class="mb-3">
-                    <label for="selectEspecialidad" class="form-label fw-semibold">Seleccione la Especialidad</label>
-                    <select class="form-select" id="selectEspecialidad" required>
-                      <option value="" selected disabled>Seleccione una opción</option>
-                      <option value="1">Odontología General</option>
-                      <option value="2">Ortodoncia</option>
-                      <option value="3">Pediatría Dental</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label for="inputFecha" class="form-label fw-semibold">Fecha Solicitada</label>
-                    <input type="date" class="form-control" id="inputFecha" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="selectHora" class="form-label fw-semibold">Horario Disponible</label>
-                    <select class="form-select" id="selectHora" required>
-                      <option value="" selected disabled>Seleccione un horario</option>
-                      <option value="1">09:00 AM</option>
-                      <option value="2">11:30 AM</option>
-                      <option value="3">15:30 PM</option>
-                    </select>
-                  </div>
-                  <button type="button" class="btn btn-primary w-100 py-2" data-bs-toggle="modal" data-bs-target="#exitoCitaModal">Confirmar Turno</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="m-0 small opacity-75">&copy; 2026 Costa Dental. Todos los derechos reservados.</p>
+    </footer>
 
-        <div class="tab-pane fade" id="panel-control-pane" role="tabpanel" aria-labelledby="panel-control-tab" tabindex="0">
-          <div class="row mb-3">
-            <div class="col-12">
-              <h2 class="fw-bold">Panel de Control de Horarios</h2>
-              <p class="text-muted">Listado global de turnos agendados para el día de hoy. Use los botones de acción para gestionar.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="table-responsive">
-                <table class="table table-striped bg-white border align-middle">
-                  <thead class="table-light">
-                    <tr>
-                      <th>Paciente</th>
-                      <th>Odontólogo</th>
-                      <th>Horario</th>
-                      <th>Tratamiento</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>Carlos Gómez</strong></td>
-                      <td>Dr. Luis Martínez</td>
-                      <td>09:00 AM</td>
-                      <td>Evaluación Inicial</td>
-                      <td>
-                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#adminAccionModal">Modificar / Borrar</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><strong>María Rodríguez</strong></td>
-                      <td>Dra. Ana Ríos</td>
-                      <td>11:30 AM</td>
-                      <td>Ortodoncia Control</td>
-                      <td>
-                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#adminAccionModal">Modificar / Borrar</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="alta-profesionales-pane" role="tabpanel" aria-labelledby="alta-profesionales-tab" tabindex="0">
-          <div class="row mb-3">
-            <div class="col-12">
-              <h2 class="fw-bold">Registrar Nuevo Odontólogo</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-8 col-lg-6">
-              <div class="bg-white p-4 rounded-3 border shadow-sm">
-                <form onsubmit="alert('Simulación: Profesional dado de alta con éxito.'); return false;">
-                  <div class="mb-3">
-                    <label for="nombreDoc" class="form-label fw-semibold">Nombre Completo</label>
-                    <input type="text" class="form-control" id="nombreDoc" placeholder="Ej: Dra. Valeria Fuentes" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="especialidadDoc" class="form-label fw-semibold">Especialidad</label>
-                    <input type="text" class="form-control" id="especialidadDoc" placeholder="Ej: Endodoncia" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="matriculaDoc" class="form-label fw-semibold">Matrícula Profesional</label>
-                    <input type="text" class="form-control" id="matriculaDoc" placeholder="Ej: MP-34521" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="horarioDoc" class="form-label fw-semibold">Horarios de Atención</label>
-                    <input type="text" class="form-control" id="horarioDoc" placeholder="Ej: Lunes a Viernes 08:00 a 13:00" required>
-                  </div>
-                  <button type="submit" class="btn btn-success w-100 py-2">Dar de Alta Profesional</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="modal fade" id="detalleCitaModal" tabindex="-1" aria-labelledby="detalleCitaModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="detalleCitaModalLabel">Detalle de la Consulta</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p><strong>Fecha:</strong> 28/05/2026</p>
-            <p><strong>Hora:</strong> 10:30 AM</p>
-            <p><strong>Odontólogo:</strong> Dr. Luis Martínez</p>
-            <p><strong>Tratamiento:</strong> Ortodoncia Control</p>
-            <p><strong>Estado:</strong> <span class="badge bg-warning text-dark">Pendiente</span></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="exitoCitaModal" tabindex="-1" aria-labelledby="exitoCitaModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header bg-success text-white">
-            <h5 class="modal-title fw-bold" id="exitoCitaModalLabel">¡Operación Exitosa!</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center py-4">
-            <p class="fs-5 mb-0">Su consulta médica ha sido agendada con éxito.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Entendido</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="adminAccionModal" tabindex="-1" aria-labelledby="adminAccionModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header bg-dark text-white">
-            <h5 class="modal-title fw-bold" id="adminAccionModalLabel">Gestionar Agenda</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p class="text-muted">Seleccione qué acción desea realizar sobre el turno seleccionado del día de hoy.</p>
-          </div>
-          <div class="modal-footer justify-content-between">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="alert('Simulación: Registro eliminado.')">Borrar Agenda</button>
-            <div>
-              <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-warning text-dark" data-bs-dismiss="modal" onclick="alert('Simulación: Formulario de modificación abierto.')">Modificar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
 </html>
